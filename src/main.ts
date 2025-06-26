@@ -8,7 +8,10 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix('api');
   app.enableVersioning({ type: VersioningType.URI, defaultVersion: '1' });
-  app.enableCors();
+  app.enableCors({
+    origin: 'https://frontend-ferreteria3.onrender.com',
+    credentials: true,
+  });
 
   const config = new DocumentBuilder()
     .setTitle('API Rest Ferreteria - SIS257')
